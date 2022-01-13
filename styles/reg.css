@@ -1,0 +1,115 @@
+#reg-wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--general-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: var(--main-text);
+}
+#reg-center-block{
+    margin: auto;
+    width: 1300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+#logo-block{
+    width: fit-content;
+    margin: 0;
+    z-index: 100;
+}
+#reg-form{
+    width: 800px;
+    height: 600px;
+    background: var(--body-color);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 16%);
+    border-radius: 20px;
+}
+@media screen and (max-width: 920px) {
+    #reg-form{
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+    }
+}
+.reg-home{
+    position: absolute;
+    left:15px;
+    top:10px;
+}
+.reg-h{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+.reg-inputs-block{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2em;
+    align-items: center;
+
+}
+.reg-input{
+    width: 250px;
+    color: black;
+    font-size: 1em;
+    margin-bottom: 40px;
+}
+#reg-name{
+    margin-top: 30px;
+}
+.reg-theme-btn{
+    width:45px; 
+    position:absolute;
+    right:10px; 
+    top:10px;
+    border: 2px solid var(--light-color);
+}
+#reg-logo{
+    height: 102px;
+}
+
+#send_btn{
+    width: 300px;
+    margin-top: 30px;
+    height: 40px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid var(--light-color);
+    border-radius: 10px;
+    background-color: var(--general-color);
+    font-size: 1.2em;
+    transition: 150ms;
+    cursor: pointer;
+    color: var(--main-text);
+}
+#send_btn:hover{
+    background-color: var(--main-text);
+    color: var(--body-color);
+}
+#error-block{
+    margin-top: 30px;
+    color: red;
+}
+.reg-input{
+    margin-bottom: 10px;
+}
+.reg-text{color: var(--main-text);}
+
+@media screen and (max-height: 590px) {
+    #reg-form{
+        height: 100vh;
+        overflow: hidden;
+        overflow-y: scroll;
+    }
+}
