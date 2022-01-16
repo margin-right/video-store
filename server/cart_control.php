@@ -1,4 +1,5 @@
 <?php
+    // подключаем бд и получаем id товара и токен пользователя
     include 'database_con.php';
     $id = $_POST['card_id'];
     $token = $_COOKIE['token'];
@@ -7,10 +8,16 @@
     if (preg_match("/[^0-9]/", $id)) {
         exit;
     }
+
+    // получаем корзина из бд
     $user_cart_get = mysqli_query($con, "SELECT `cart` FROM `users` WHERE token='$token'");
     $user_cart = mysqli_fetch_assoc($user_cart_get);
+
+
     $cards_id_list = '';
     $cart_for_update = '';
+
+    //выбор метода (добавление, удаление)
     switch ($_POST['function']) {
         case 'add':
             $new_cart = $user_cart['cart']."~".$id;

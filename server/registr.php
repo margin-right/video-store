@@ -38,7 +38,7 @@
     $login = mysqli_real_escape_string($con, $login);
     $password = mysqli_real_escape_string($con, $password);
     $password_h = password_hash($password, PASSWORD_DEFAULT);
-    $token = password_hash(substr(str_shuffle($chars),0,16),PASSWORD_BCRYPT);
+    $token = hash('ripemd160',substr(str_shuffle($chars),0,32));
 
     $send = mysqli_query($con, "INSERT INTO `users` (`login`, `password`, `token`, `cart`) VALUES ('$login', '$password_h', '$token', '')");
     setcookie('token', $token, time()+31536000, '/');

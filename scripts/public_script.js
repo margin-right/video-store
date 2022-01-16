@@ -23,7 +23,7 @@ function login_send(){
     }
 }
 function logout(){  
-    $.removeCookie('token');
+    $.cookie('token', '', { expires: -1, path: '/'});
     window.location.reload();
 }
 
